@@ -40,7 +40,14 @@ public class TodoController implements CommandLineRunner {
     @PostMapping("/delete/{id}")
     public String deleteTodoItem(@PathVariable("id") Long id){
         todoItemRepository.deleteById(id);
-        
+
+        return "redirect:/";
+    }
+
+    @PostMapping("/removeAll")
+    public String removeAllItems(){
+        todoItemRepository.deleteAll();
+
         return "redirect:/";
     }
 
