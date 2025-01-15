@@ -2,6 +2,7 @@ package com.dashaleshok.todoapp.controllers;
 
 import com.dashaleshok.todoapp.model.TodoItem;
 import com.dashaleshok.todoapp.repositories.TodoItemRepository;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class TodoController {
+public class TodoController implements CommandLineRunner {
 
     private final TodoItemRepository todoItemRepository;
 
@@ -29,4 +30,8 @@ public class TodoController {
         return "index";
     }
 
+    @Override
+    public void run(String... args) throws Exception {
+
+    }
 }
